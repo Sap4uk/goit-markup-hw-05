@@ -60,6 +60,8 @@ header {
 
 .site-nav .link {
   display: block;
+  position: relative;
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -107,6 +109,17 @@ header {
 .link-nav .icon {
   margin-right: 10px;
   fill: currentColor;
+}
+
+.current::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 .address-nav {
