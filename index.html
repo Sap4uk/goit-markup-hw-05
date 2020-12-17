@@ -46,7 +46,7 @@
                     <div class="container">
                             <h1>Эффективные решения <br>
                                 для вашего бизнеса</h1>
-                            <button class="button" type="button">Заказать услугу</button>
+                            <button data-modal-open class="button" type="button">Заказать услугу</button>
                         </div>
                     
                     
@@ -420,10 +420,20 @@
                 
             </footer>
         
+                                      <!-- Модалка -->
+
+                <div class="backdrop is-hidden" data-modal>
+                    <div class="modal">
+                        <button class="button-close" data-modal-close> 
+                            <svg class="modal-icon" width="11px" height="11px">
+                                <use href="./images/icon/symbol-defs.svg#icon-close"></use>
+                            </svg>    
+                        </button>
+                    </div>
+                </div>                      
     
     
-    
-    
+    <script src="./js/modal.js"></script>
     </body>
 
 </html>
