@@ -11,6 +11,7 @@
   --second-bg-color: #2f303a;
   --transparency-color: rgba(255, 255, 255, 0.6);
   --icon-color: #afb1b8;
+  --timing-animation: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -71,6 +72,8 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--timing-animation);
 }
 
 .site-nav .link:hover,
@@ -100,6 +103,8 @@ header {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.02em;
+
+  transition: color 250ms var(--timing-animation);
 }
 .link-nav:hover,
 .link-nav:focus {
@@ -144,6 +149,8 @@ header {
   display: flex;
   align-items: center;
 }
+
+/* site nav*/
 
 /* hero */
 
@@ -262,6 +269,8 @@ header {
   border-radius: 4px;
 } */
 
+/* section about*/
+
 /* чум мы занимаемся */
 .section-about h2 {
   font-size: 36px;
@@ -282,6 +291,7 @@ header {
 }
 
 /* чeм мы занимаемся */
+
 .work-list {
   display: flex;
 }
@@ -384,6 +394,7 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms var(--timing-animation);
 }
 
 .socials-link {
@@ -408,6 +419,8 @@ header {
 .icon-socials {
   fill: currentColor;
 }
+/* section team */
+
 /* address */
 
 .address .link {
@@ -456,6 +469,7 @@ header {
   margin-top: 0;
   margin-bottom: 0;
 }
+/* address */
 
 /* footer-join */
 
@@ -495,6 +509,7 @@ header {
 
 .footer-link {
   background: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms var(--timing-animation);
 }
 
 .footer-social {
@@ -512,6 +527,7 @@ header {
 .footer-socials > li:nth-child(4) {
   margin-right: 0;
 }
+/* footer-join */
 
 /* PORTFOLIO */
 
@@ -527,11 +543,15 @@ header {
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
   border-radius: 4px;
   display: inline-block;
   border: none;
   padding: 6px 22px;
+
+  transition: color 250ms var(--timing-animation),
+    background-color 250ms var(--timing-animation),
+    box-shadow 250ms var(--timing-animation);
 }
 
 .container-button .item {
@@ -559,6 +579,48 @@ header {
 }
 
 /* exampls */
+
+.fallout-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.fallout-menu {
+  position: absolute;
+  opacity: 0;
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  padding: 63px 24px;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-animation),
+    opacity 250ms var(--timing-animation);
+}
+
+.portfolio-title a:hover .fallout-menu {
+  transform: translateY(0);
+}
+
+.portfolio-title a:hover .fallout-menu,
+.portfolio-title a:focus .fallout-menu {
+  display: block;
+  opacity: 1;
+}
+
+.portfolio-title .fallout-text {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-white-color);
+}
 
 .section-porfolio {
   padding-top: 94px;
@@ -635,6 +697,7 @@ header {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+/* exampls */
 
 /* clients */
 
@@ -662,6 +725,7 @@ header {
   height: 90px;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
+  transition: border-color 250ms var(--timing-animation);
 }
 
 .client-list {
@@ -676,6 +740,7 @@ header {
 
 .client-link:hover .client-icon {
   fill: var(--accent-color);
+  transition: fill 250ms var(--timing-animation);
 }
 
 .section-clients .client-item {
@@ -691,6 +756,7 @@ header {
 .client-link:focus {
   border-color: var(--accent-color);
 }
+/* clients */
 
 /* модалка */
 .backdrop {
@@ -703,11 +769,18 @@ header {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-animation);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0.9) translate(-50%, -50%);
 }
 
 .modal {
@@ -718,7 +791,8 @@ header {
   width: 528px;
   height: 581px;
 
-  transform: translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 250ms var(--timing-animation);
 
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
