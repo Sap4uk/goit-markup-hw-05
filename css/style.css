@@ -726,8 +726,7 @@ header {
   height: 90px;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  transition: border-color 250ms var(--timing-animation),
-    color 250ms var(--timing-animation);
+  transition: border-color 250ms var(--timing-animation);
 }
 
 .client-list {
@@ -738,11 +737,11 @@ header {
 .client-icon {
   fill: currentColor;
   color: #afb1b8;
+  transition: fill 250ms var(--timing-animation);
 }
 
 .client-link:hover .client-icon {
   fill: var(--accent-color);
-  transition: fill 250ms var(--timing-animation);
 }
 
 .section-clients .client-item {
