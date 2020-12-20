@@ -394,7 +394,8 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms var(--timing-animation);
+  transition: background-color 250ms var(--timing-animation),
+    color 250ms var(--timing-animation);
 }
 
 .socials-link {
